@@ -27,6 +27,7 @@ def positional_args_sum(*integers):     # unpacking operator (*)
     return result
 
 print("positional_args_sum(1, 2, 3) :", positional_args_sum(1, 2, 3))
+print("positional_args_sum() :", positional_args_sum())
 
 # Keyword (or named) arguments.  **kwargs
 def named_agrs_func(**input_pars):

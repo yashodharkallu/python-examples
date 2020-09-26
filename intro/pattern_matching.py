@@ -12,20 +12,24 @@ def classify(entity):
 
 In other words, pattern matching allows you to inspect a piece of data and simultaneously match its shape and bind the value of its fields to variables. In the above code, Cat(age=age) is a pattern that matches Cat values, and binds to the variable named age.
 """
+import re
+
 
 class Customer:
-  def __init__(self, name):
-    self.name = name
+    def __init__(self, name):
+        self.name = name
+
 
 class Product:
-  def __init__(self, price):
-    self.price = price
+    def __init__(self, price):
+        self.price = price
+
 
 def classify(entity):
-  if isinstance(entity, Product):
-    print("A Product that's {} INR cost ".format(entity.price))
-  elif isinstance(entity, Customer):
-    print("A Customer named {}".format(entity.name))
+    if isinstance(entity, Product):
+        print("A Product that's {} INR cost ".format(entity.price))
+    elif isinstance(entity, Customer):
+        print("A Customer named {}".format(entity.name))
 
 
 classify(Customer("Rohit"))
@@ -36,7 +40,6 @@ classify(Product(3000))
 
 #######################################################################################################
 
-import re
 
 print("\n################# re.match() ########################")
 pattern = '^R\\w+\\W+\\w+n$'
@@ -44,9 +47,9 @@ test_string = 'Ravi Kiran'
 result = re.match(pattern, test_string)
 
 if result:
-  print("Search successful.")
+    print("Search successful.")
 else:
-  print("Search unsuccessful.")
+    print("Search unsuccessful.")
 
 print("\n################# re.findall() ########################")
 string = 'hello 12 hi 89. Howdy 34'
