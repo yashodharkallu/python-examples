@@ -7,15 +7,15 @@
 """
 
 # List Comprehension
-nums = [1,2,3]
-squares=[num*num for num in nums]
+nums = [1, 2, 3]
+squares = [num*num for num in nums]
 
 print("List Comprehension way: ", squares)
 
 
 # Generator Comprehension
-nums = [1,2,3]
-squares=(num*num for num in nums)
+nums = [1, 2, 3]
+squares = (num * num for num in nums)
 # Each time a __next__ is called
 
 print("List Comprehension way: ", [*squares])
@@ -24,6 +24,6 @@ print("List Comprehension way: ", [*squares])
 # lazy function
 def gen_squares(nums):
     for num in nums:
-        yield  num*num
+        yield num*num
 
-print("Generator :",[*gen_squares([1,2,3])])
+print("Generator :", [*gen_squares([1, 2, 3])])

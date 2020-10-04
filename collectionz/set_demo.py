@@ -89,7 +89,7 @@ print("\n<<<<<<<<<<< Set Union >>>>>>>>>>>>>")
 A = {1, 2, 3, 4, 5}
 B = {4, 5, 6, 7, 8}
 
-# use | operator or or union() function
+# use | operator or union() function
 print(A | B)
 print(A.union(B))
 

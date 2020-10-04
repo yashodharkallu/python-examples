@@ -9,6 +9,7 @@ weekends = ["Sat", "Sun"]
 days = weekdays + weekends
 
 print("days :", days)
+print("days + weekends :", weekdays + weekends)
 print("days + weekends :", weekdays.__add__(weekends))
 
 day_indices = [1, 2, 3, 4, 5, 6, 7]
@@ -18,6 +19,7 @@ print("zip days and day indices: ", list(zipped))
 print("weekdays head = ", weekdays[0])
 print("weekdays tail = ", weekdays[-1])
 print("weekdays's 2nd index = ", weekdays[1])
+print("weekdays contains 'Mon'? ", "Mon" in weekdays)
 print("weekdays contains 'Mon'? ", weekdays.__contains__("Mon"))
 print('weekdays from 1st Index to 3rd Index:', weekdays[1: 4])
 print("weekdays size = ", weekdays.__sizeof__(), "bytes")
