@@ -8,45 +8,33 @@ instance_attr is an instance attribute defined inside the constructor.
 """
 
 
-class Student:
-    """ Student class """
-    standard = '10th'
+class Employee:
+    """ Employee class """
 
-    def __init__(self, id=0, name=None):
+    def __init__(self, name, dept):
         """ Parameterized constructor with default Arguments """
-        print('Calling __init__()')
-        self.id = id
+        print('__init__ function got called!')
         self.name = name
-        self.bigdata = False
-
-    def knows_bigdata(self):
-        self.bigdata = True
-
-    def show_details(self):
-        print("Student({}, {}, {}, {})".format(self.id, self.name, self.standard, self.bigdata))
+        self.dept = dept
 
 
-# Creating a student with default's
-student1 = Student()
-student1.show_details()
+# Creating a Employee instance
+print('------------------- Employee - Ravi ----------------------')
+emp_ravi = Employee('Ravi', 'IT')
+print('Employee({}, {})'.format(emp_ravi.name, emp_ravi.dept))
 
-# Setting student object attributes
-student1.id = 101
-student1.name = "Kalpesh"
-student1.show_details()
+# Overriding employee object attributes
+emp_ravi.name = "Ravi Kiran"
+emp_ravi.dept = "Data Engineering"
+print('Employee({}, {})'.format(emp_ravi.name, emp_ravi.dept))
+print()
 
-# Creating a student by passing initial values
-student2 = Student(102, 'Roshith')
-student2.show_details()
+# Creating another Employee instance
+print('------------------- Employee - Roshith ---------------------')
+emp_roshith = Employee('Roshith', 'Data Engineering')
+print(emp_roshith)
+print('Employee({}, {})'.format(emp_roshith.name, emp_roshith.dept))
+print()
 
-print('Models: {} = {}, {} = {}'.format(student1.id, student1.name, student2.id, student2.name))
-print('Models: {0.id} = {0.name}, {1.id} = {1.name}'.format(student1, student2))
-student2.knows_bigdata()
-print('{} knows Big Data: {}'.format(student2.name, student2.bigdata))
-student2.python = True
-print('{} knows Python: {}'.format(student2.name, student2.python))
-# AttributeError: 'Student' object has no attribute 'python'
-# print('{} knows Python: {}'.format(student1.name, student1.python))
-print('{} in {} standard'.format(student1.name, student1.standard))
-student2.standard = '9th'
-print('{} in {} standard'.format(student2.name, student2.standard))
+print('Models: {} = {}, {} = {}'.format(emp_ravi.name, emp_ravi.dept, emp_roshith.name, emp_roshith.dept))
+print('Models: {0.name} = {0.dept}, {1.name} = {1.dept}'.format(emp_ravi, emp_roshith))

@@ -1,44 +1,58 @@
 from datetime import datetime
 
 
-class Account:
-    """Simple Account class with balance"""
+class Employee:
+    """ Employee class """
+
+    emp_serial = 1001
+    pf_serial = 101
 
     @staticmethod
-    def _current_time():
-        return datetime.now().strftime("%d-%b-%Y %H:%M:%S")
+    def _generate_pf_serial():
+        pf_number = Employee.pf_serial
+        Employee.pf_serial += 1
+        return pf_number
 
-    def __init__(self, name, balance):
+    @classmethod
+    def _generate_emp_serial(cls):
+        emp_serial = cls.emp_serial
+        cls.emp_serial += 1
+        return emp_serial
+
+
+    def __init__(self, name, dept):
+        """ Parameterized constructor with default Arguments """
         self.name = name
-        self.balance = balance
-        self.transaction_list = []
+        self.dept = dept
+        self.emp_id = Employee._generate_emp_serial()
+        self.pf_number = Employee._generate_pf_serial()
 
-    def deposit(self, amount):
-        if amount > 0:
-            self.balance += amount
-            self.transaction_list.append((Account._current_time(), amount))
+    @classmethod
+    def create_emp_dummy(cls):
+        return cls(None, None)
 
-    def withdraw(self, amount):
-        if 0 < amount <= self.balance:
-            self.balance -= amount
-            self.transaction_list.append((Account._current_time(), -amount))
-        else:
-            print('Amount must be more than 0 and no more than balance!')
+    @classmethod
+    def create_emp_data_scientist(cls, name, dept='Data Science'):
+        return cls(name, dept)
 
-    def show_balance(self):
-        print('Account statement:')
-        for date, amount in self.transaction_list:
-            if amount > 0:
-                tran_type = 'deposit'
-            else:
-                tran_type = 'withdraw'
-                amount *= -1
-            print('{} | {} | {}'.format(date, tran_type, amount))
+    def __str__(self):
+        return 'Employee({}, {}, {}, {})'.format(self.emp_id, self.name, self.dept, self.pf_number)
 
 
-if __name__ == '__main__':
-    sunit = Account('Sunit', 0)
-    sunit.deposit(1000)
-    sunit.withdraw(500)
-    sunit.deposit(1000)
-    sunit.show_balance()
+# Creating an Employee instance
+print('------------------- Employee - Ravi ----------------------')
+emp_ravi = Employee('Ravi', 'Data Engineering')
+print(emp_ravi)
+print()
+
+# Creating an Employee instance without name and dept
+print('------------------- Employee - Without Name and Dept ---------------------')
+emp_dummy = Employee.create_emp_dummy()
+print(emp_dummy)
+print()
+
+# Creating an Employee instance without name and dept
+print('------------------- Employee - Data Scientist ---------------------')
+emp_roshith = Employee.create_emp_data_scientist('Ravi')
+print(emp_roshith)
+print()
