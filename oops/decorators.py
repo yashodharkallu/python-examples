@@ -1,8 +1,5 @@
 """
-This shows the usage of property decorators
-Python @property is one of the built-in decorators.
-The main purpose of any decorator is to change your class methods or attributes
-in such a way so that the users need not make any additional changes in their code.
+decorators
 """
 import time
 
