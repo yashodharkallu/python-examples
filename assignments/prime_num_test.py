@@ -5,7 +5,7 @@ def isPrime(number):
             counter += 1
     return (counter == 2)
 
-numbers = range(1, 1001)
+numbers = range(1, 10001)
 primeNumCounter = 0
 for number in numbers:
     if isPrime(number):
