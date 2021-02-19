@@ -38,7 +38,7 @@ def max_area_histogram(arr):
 
 
 # Driver Code
-hist = [6, 2, 5, 4, 5, 1, 6]
+hist = [6, 3, 1, 4, 12, 4]
 print("Maximum area is",
       max_area_histogram(hist))
 
