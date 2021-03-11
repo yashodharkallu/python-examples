@@ -91,15 +91,17 @@ else:
 
 
 print("\n################# re.search() match.group() ########################")
-string = '39801 356, 2102 1111'
+date_string = '2021-02-18'
 
 # Three digit number followed by space followed by two digit number
-pattern = '(\d{3}) (\d{2})'
+date_pattern = '(\d{4})-(\d{2})-(\d{2})'
 
 # match variable contains a Match object.
-match = re.search(pattern, string)
+match = re.search(date_pattern, date_string)
 
 if match:
-  print(match.group())
+  print('year: ', match.group(1))
+  print('month: ', match.group(2))
+  print('date: ', match.group(3))
 else:
   print("pattern not found")
