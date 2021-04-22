@@ -1,5 +1,3 @@
-a = tuple("abcde")
-a,b,c,d,e = a
-b = c = '*'
-a = (a,b,c,d,e)
-print(a)
+a = [("this is a tough question", 1)]
+b = dict(a)
+print(b["1"])
