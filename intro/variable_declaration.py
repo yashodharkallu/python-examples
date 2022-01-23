@@ -46,15 +46,17 @@ with more than
 one line code."""
 unicode = u"\u00dcnic\u00f6de"
 raw_str = r"raw \n string"
+raw_str2 = "raw \n string"
 
 print(strings)
 print(char)
 print(multiline_str)
 print(unicode)
 print(raw_str)
+print(raw_str2)
 
 # Boolean literals
-x = (1 == True)
+x = (100 == True)
 y = (0 == False)
 a = True + 4
 b = False + 10
@@ -102,7 +104,7 @@ x = 'Global x'
 
 
 def test():
-    # global x
+    global x
     y = 'Local y'
     x = 'Local x'
     print(x + ', ' + y)  # prints 'Local x' and 'Local y'

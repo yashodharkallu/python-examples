@@ -21,5 +21,5 @@ if __name__ == "__main__":
 
     # Switch Statement
     # Python does not have a simple switch case construct
-    argument = 1
+    argument = 10
     print(not_switch(argument))
